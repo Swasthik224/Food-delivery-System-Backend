@@ -14,7 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/admin")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000","https://food-delivery-system-inky.vercel.app")
 @PreAuthorize("hasRole('ADMIN')")
 public class AdminController {
 
