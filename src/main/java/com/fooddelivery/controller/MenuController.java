@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000","https://food-delivery-system-inky.vercel.app")
 public class MenuController {
 
     private final MenuItemRepository menuItemRepository;
