@@ -14,7 +14,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/orders")
-@CrossOrigin(origins = "http://localhost:3000","https://food-delivery-system-inky.vercel.app")
+@CrossOrigin(origins = {
+    "http://localhost:3000",
+    "https://food-delivery-system-inky.vercel.app"
+})
 public class OrderController {
 
     @Autowired
