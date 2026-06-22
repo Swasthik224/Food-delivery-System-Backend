@@ -40,4 +40,15 @@ public class AuthController {
         String token = jwtUtil.generateToken(user.getEmail());
         return ResponseEntity.ok(new AuthResponse(token, user));
     }
+    @PostMapping("/forgot-password")
+    public ResponseEntity<?> forgotPassword(@Valid @RequestBody ForgotPasswordRequest request) {
+        authService.processForgotPassword(request.getEmail());
+        return ResponseEntity.ok().body(java.util.Map.of("message", "Password reset email sent successfully."));
+    }
+
+    @PostMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(@Valid @RequestBody ResetPasswordRequest request) {
+        authService.updatePassword(request.getToken(), request.getNewPassword());
+        return ResponseEntity.ok().body(java.util.Map.of("message", "Password updated successfully."));
+    }
 }
